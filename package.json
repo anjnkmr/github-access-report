@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/anjnkmr/github-access-report/issues"
   },
-  "homepage": "https://github.com/anjnkmr/github-access-report#readme"
+  "homepage": "https://github.com/anjnkmr/github-access-report#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  }
 }

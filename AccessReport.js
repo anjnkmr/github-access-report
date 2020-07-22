@@ -51,7 +51,7 @@ async function fetchData() {
     const aloop = async() => {
         for (let i = 0; i < TEAMS.length; i++) {
             let element = TEAMS[i];
-            console.log(element);
+            // console.log(element);
             element.members_url = element.members_url.replace('{/member}', '');
             if (element.members === undefined) {
                 element.members = [];
@@ -78,7 +78,7 @@ async function fetchData() {
         if (user.repos === undefined) {
             user.repos = [];
         }
-        console.log('User', user.login, user.repos.length);
+        // console.log('User', user.login, user.repos.length);
         user.repos.forEach(repo => {
             requiredData.push({'user': user.login, repo});
         });

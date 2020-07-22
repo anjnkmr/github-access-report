@@ -1,9 +1,22 @@
 const fs = require('fs');
 const fetch = require('node-fetch');
 
+var cliArgs = process.argv.slice(2);
+if (cliArgs[0] === undefined) {
+    console.error('ORG_CODE not provided');
+    console.log('Usage', 'node AccessReport.js <ORG_CODE> <API_KEY>');
+    return;
+}
+
+if (cliArgs[1] === undefined) {
+    console.error('API_KEY not provided');
+    console.log('Usage', 'node AccessReport.js <ORG_CODE> <API_KEY>');
+    return;
+}
+
 const BASE_URI = 'https://api.github.com';
-const API_KEY = process.env.API_KEY;
-const ORG_CODE = 'realvariabledas';
+const ORG_CODE = cliArgs[0]
+const API_KEY = cliArgs[1];
 const API = {
     MEMBER_LIST: BASE_URI + '/orgs/' + ORG_CODE + '/members',
     TEAMS_LIST: BASE_URI + '/orgs/' + ORG_CODE + '/teams'
